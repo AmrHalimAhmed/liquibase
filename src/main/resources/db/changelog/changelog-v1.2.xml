@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="change_1" author="Amr Halim">
+
+        <!-- Rename the 'address' column to 'address11' -->
+        <renameColumn
+                schemaName="admin"
+                tableName="persons"
+                oldColumnName="address"
+                newColumnName="address11"
+                columnDataType="varchar(255)"
+        />
+
+        <!-- Rename the 'age' column to 'age11' -->
+        <renameColumn
+                schemaName="admin"
+                tableName="persons"
+                oldColumnName="age"
+                newColumnName="age11"
+                columnDataType="int"
+        />
+    </changeSet>
+
+<!--    <changeSet id="change_2" author="Amr Halim" runAlways="true">
+
+
+    </changeSet>-->
+
+
+</databaseChangeLog>

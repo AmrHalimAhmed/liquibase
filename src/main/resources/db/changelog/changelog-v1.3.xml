@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="1" author="Amr Halim">
+
+<!--        once you drop a table or columns using Liquibase,-->
+<!--        it cannot be automatically rolled back. Dropping a table or column is a non-reversible operation,-->
+<!--        and Liquibase does not have an automatic mechanism to undo such changes.-->
+
+        <!-- Drop the 'address' column -->
+        <dropColumn
+                schemaName="admin"
+                tableName="persons"
+                columnName="address11"
+        />
+
+        <!-- Drop the 'age' column -->
+        <dropColumn
+                schemaName="admin"
+                tableName="persons"
+                columnName="age11"
+        />
+    </changeSet>
+</databaseChangeLog>
