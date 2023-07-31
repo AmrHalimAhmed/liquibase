@@ -10,14 +10,14 @@
                 schemaName="admin"
                 tableName="persons">
             <column name="address" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
         </addColumn>
         <addColumn
                 schemaName="admin"
                 tableName="persons">
             <column name="age" type="int">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
         </addColumn>
 

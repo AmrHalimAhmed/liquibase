@@ -26,10 +26,5 @@
         />
     </changeSet>
 
-<!--    <changeSet id="change_2" author="Amr Halim" runAlways="true">
-
-
-    </changeSet>-->
-
 
 </databaseChangeLog>

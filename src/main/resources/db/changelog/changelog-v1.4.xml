@@ -1,0 +1,36 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="1" author="Amr Halim">
+        <sql>
+            -- Add the 'status' column to the 'persons' table
+            ALTER TABLE admin.persons
+            ADD COLUMN status VARCHAR(100) NOT NULL;
+        </sql>
+        <rollback>
+            <sql>
+                -- Rollback: Drop the 'status' column from the 'persons' table
+                ALTER TABLE admin.persons
+                DROP COLUMN status;
+            </sql>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="2" author="Amr Halim">
+        <sql>
+            -- Add the 'gender' column to the 'persons' table
+            ALTER TABLE admin.persons
+            ADD COLUMN gender VARCHAR(100) NOT NULL;
+        </sql>
+        <rollback>
+            <sql>
+                -- Rollback: Drop the 'gender' column from the 'persons' table
+                ALTER TABLE admin.persons
+                DROP COLUMN gender;
+            </sql>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

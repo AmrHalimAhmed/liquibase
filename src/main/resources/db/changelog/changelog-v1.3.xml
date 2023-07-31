@@ -7,9 +7,9 @@
 
     <changeSet id="1" author="Amr Halim">
 
-<!--        once you drop a table or columns using Liquibase,-->
-<!--        it cannot be automatically rolled back. Dropping a table or column is a non-reversible operation,-->
-<!--        and Liquibase does not have an automatic mechanism to undo such changes.-->
+        <!--        once you drop a table or columns using Liquibase,-->
+        <!--        it cannot be automatically rolled back. Dropping a table or column is a non-reversible operation,-->
+        <!--        and Liquibase does not have an automatic mechanism to undo such changes.-->
 
         <!-- Drop the 'address' column -->
         <dropColumn
@@ -24,5 +24,16 @@
                 tableName="persons"
                 columnName="age11"
         />
+        <rollback>
+            <!-- Rollback: Add the 'address' column back to the 'persons' table -->
+            <addColumn schemaName="admin" tableName="persons">
+                <column name="address11" type="varchar(255)"/>
+            </addColumn>
+
+            <!-- Rollback: Add the 'age' column back to the 'persons' table -->
+            <addColumn schemaName="admin" tableName="persons">
+                <column name="age11" type="int"/>
+            </addColumn>
+        </rollback>
     </changeSet>
 </databaseChangeLog>
